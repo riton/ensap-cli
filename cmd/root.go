@@ -96,7 +96,7 @@ func initConfig() {
 		// Find home directory.
 		home, err := homedir.Dir()
 		if err != nil {
-			fmt.Println(err)
+			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)
 		}
 
@@ -107,13 +107,15 @@ func initConfig() {
 
 	viper.AutomaticEnv() // read in environment variables that match
 	// If a config file is found, read it in.
-	if err := viper.ReadInConfig(); err == nil {
-		if debug {
-			fmt.Println("Using config file:", viper.ConfigFileUsed())
+	if err := viper.ReadInConfig(); err != nil {
+		if _, ok := err.(viper.ConfigFileAlreadyExistsError); !ok {
+			fmt.Fprintf(os.Stderr, "Fail to process configuration file: %v\n", err)
+			os.Exit(2)
 		}
 	}
 
 	if debug {
 		log.SetLevel(log.DebugLevel)
+		log.Debugf("Using config file:", viper.ConfigFileUsed())
 	}
 }
