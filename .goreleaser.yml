@@ -9,7 +9,8 @@ builds:
       - linux
       - windows
       - darwin
-    binary: 'ensap'
+    binary: "ensap"
+    ldflags: "-s -w -X github.com/riton/ensap-cli/version.Version={{.Version}} -X github.com/riton/ensap-cli/version.Commit={{.Commit}} -X github.com/riton/ensap-cli/version.BuildDate={{.Date}}"
 archives:
   - replacements:
       darwin: Darwin
@@ -18,19 +19,19 @@ archives:
       386: i386
       amd64: x86_64
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
 snapshot:
   name_template: "{{ incpatch .Version }}-next"
 changelog:
   sort: asc
   filters:
     exclude:
-      - '^docs:'
-      - '^test:'
+      - "^docs:"
+      - "^test:"
 
 # Generate DEB and RPM using NFPM
 nfpms:
-  - file_name_template: '{{ .ProjectName }}_{{ .Arch }}'
+  - file_name_template: "{{ .ProjectName }}_{{ .Arch }}"
     homepage: https://github.com/riton/ensap-cli
     description: Ensap (https://ensap.gouv.fr) CLI - L'espace numérique sécurisé de l'agent public
     maintainer: Remi Ferrand <riton.github_at_gmail.com>
@@ -40,7 +41,7 @@ nfpms:
       - apk
       - deb
       - rpm
-    bindir: '/usr/bin'
+    bindir: "/usr/bin"
     contents:
       - src: ./_examples/ensap.yaml
         dst: /usr/share/{{ .ProjectName }}/ensap.sample.yaml
