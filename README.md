@@ -12,7 +12,11 @@ Cet outil permet pour le moment de:
 
 ## Installation
 
-En attendant que des paquets ou binaires soient construits automatiquement, vous devez vous-même _compiler_ ce programme.
+### Paquets / binaires pré construits
+
+Vous pourrez trouver des paquets Windows, Linux et MacOS sur [la page de release](https://github.com/riton/ensap-cli/releases) de ce projet.
+
+### Construire à partir des sources
 
 Pour cela vous aurez besoin d'avoir le compilateur `go` installé (voir [site officiel](https://golang.org/dl/)).
 
