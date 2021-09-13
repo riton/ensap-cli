@@ -1,0 +1,16 @@
+---
+api:
+  endpoint: 'ensap.gouv.fr'
+  username: '<USERNAME>' # CHANGEME / TODO
+  password: '<PASSWORD>' # CHANGEME / TODO
+
+# # Custom template for payroll documents listing
+# rendering:
+#   templates:
+#     list-remuneration-paie-documents: |
+#       Only document UUIDs:
+#       {{- range $index, $document := . }}
+#       {{- with $document }}
+#       Document UUID = {{ .DocumentUUID }}
+#       {{- end }}
+#       {{- end }}
