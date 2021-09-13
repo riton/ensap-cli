@@ -108,7 +108,7 @@ func initConfig() {
 	viper.AutomaticEnv() // read in environment variables that match
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err != nil {
-		if _, ok := err.(viper.ConfigFileAlreadyExistsError); !ok {
+		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
 			fmt.Fprintf(os.Stderr, "Fail to process configuration file: %v\n", err)
 			os.Exit(2)
 		}
