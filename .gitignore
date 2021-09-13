@@ -1,3 +1,4 @@
 *.pdf
 ensap-payroll-cli
 ensap
+/dist
