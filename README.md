@@ -41,29 +41,5 @@ EOF
 
 ## Utilisation
 
-### Opérations sur les fiches de paie
+* [Opérations sur les fiches de paie](README.payrolls.md)
 
-#### Lister les fichers de paie présentes dans mon espace `ensap`
-
-```
-$ ensap list-remuneration-paie
-Remuneration paie documents:
-* 2021_07_BP_juillet.pdf:
-  - Document UUID: adc2cf49-6c5f-4765-1e74-7bacc1f2be68
-  - Document date: 01 Jul 21 00:00 CEST
-  - Labels:
-    - Juillet 2021
-    - 2021_07_BP_juillet.pdf (PDF, 490 Ko)
-    - 42 BTC
-```
-
-#### Télécharger une fiche de paie en connaissant son identifiant (`UUID`)
-
-```
-$ ensap download-remuneration-paie adc2cf49-6c5f-4765-1e74-7bacc1f2be68
-```
-
-La commande ci-dessus téléchargera le document identifié par l'`UUID` `adc2cf49-6c5f-4765-1e74-7bacc1f2be68` (obtenu via la commande `ensap list-remuneration-paie`) et
-enregistrera le document sous le nom `2021_07_BP_juillet.pdf`.
-
-Vous pouvez utiliser l'option `-o` ou `--out` pour spécifier un fichier de destination différent.
