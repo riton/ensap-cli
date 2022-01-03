@@ -66,6 +66,8 @@ func (c *ensapV1APIClient) Login() error {
 
 	endpoint := c.buildFullEndpoint(api.AuthentificationEndpoint, false)
 
+	log.Debugf("logging in using endpoint %s", endpoint)
+
 	req, err := http.NewRequestWithContext(c.ctx, http.MethodPost, endpoint, strings.NewReader(formData.Encode()))
 	if err != nil {
 		return errors.Wrap(err, "creating request object")
@@ -73,6 +75,11 @@ func (c *ensapV1APIClient) Login() error {
 	c.setRequestUserAgent(req)
 
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	req.Header.Set("Accept", "application/json")
+
+	// if c.cfg.Debug {
+	// 	debugDumpHTTPRequest("Login", req, true)
+	// }
 
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
