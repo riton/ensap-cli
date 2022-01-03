@@ -1,5 +1,7 @@
 # ENSAP CLI
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/riton/ensap-cli)](https://goreportcard.com/report/github.com/riton/ensap-cli)
+
 **Attention**: Cet outil est encore en développement. L'outil `ensap` n'étant accessible que depuis très peu de temps, les commandes présentées ci-dessous peuvent évoluer.
 
 ## Description
