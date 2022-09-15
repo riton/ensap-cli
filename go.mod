@@ -6,7 +6,7 @@ require (
 	github.com/Masterminds/sprig v2.22.0+incompatible
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/pkg/errors v0.8.1
-	github.com/sirupsen/logrus v1.8.1
+	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/cobra v1.2.1
 	github.com/spf13/viper v1.8.1
 	golang.org/x/net v0.0.0-20220909164309-bea034e7d591
