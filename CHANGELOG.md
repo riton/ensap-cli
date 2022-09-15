@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2022-09-15 - Remi Ferrand - v0.3.0
+
+* Mise à jour des dépendances directes
+* Mise à jour pour `go 1.19`
+
 ## 2022-01-03 - Remi Ferrand - v0.2.1
 
 * Modification liée au changement d'authentification sur le site ensap (voir #1)
